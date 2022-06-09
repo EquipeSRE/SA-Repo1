@@ -41,9 +41,15 @@ jobs:
         id: cmd
         with:
           run: cat unknown.txt
+      
+      - name: Read file if it exists?
+        uses: mathiasvr/command-output@v1
+        continue-on-error: true
+        id: cmdt
+        with:
+          run: cat unknown.txt
 
       - run: echo Command succeeded
         if: ${{ steps.cmd.outputs.stdout }}
           
-      - run: echo Command failed ${{ steps.cmd.outputs.stderr }}
-        if: ${{ steps.cmd.outputs.stderr }}
+      - run: echo Command failed ${{ steps.*.outputs.stderr }}
