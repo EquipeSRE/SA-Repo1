@@ -51,4 +51,4 @@ jobs:
           
       - name: outputs
         if: ${{ steps.*.outputs.stderr }}
-        run: echo ${{ toJson(steps.*.outputs.stderr) }}
+        run: echo '${{ toJson(steps.*.outputs.stderr) }}'
