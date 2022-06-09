@@ -44,6 +44,7 @@ jobs:
       
       - name: Read file
         uses: mathiasvr/command-output@v1
+        continue-on-error: true
         id: cmdt
         with:
           run: cat unknown.txt
