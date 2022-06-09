@@ -50,4 +50,6 @@ jobs:
       - run: echo Command succeeded
         if: ${{ steps.cmd.outputs.stdout }}
           
-      - run: echo Command failed ${{ toJson(steps.*.outputs.stderr) }}
+      - name: outputs
+        if: always()
+        run: echo Command failed ${{ toJson(steps.*.outputs.stderr) }}
