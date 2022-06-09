@@ -46,10 +46,7 @@ jobs:
         id: cmdt
         with:
           run: cat unknown.txt
-
-      - run: echo Command succeeded
-        if: ${{ steps.cmd.outputs.stdout }}
           
       - name: outputs
         if: always()
-        run: echo Command failed ${{ toJson(steps.cmd.outputs.stderr) }}
+        run: echo ${{ toJson(steps.*.outputs.stderr) }}
