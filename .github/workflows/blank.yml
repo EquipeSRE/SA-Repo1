@@ -52,4 +52,4 @@ jobs:
       - run: echo Command succeeded
         if: ${{ steps.cmd.outputs.stdout }}
           
-      - run: echo Command failed ${{ steps.*.outputs.stderr }}
+      - run: echo Command failed ${{ toJson(steps.*.outputs.stderr) }}
