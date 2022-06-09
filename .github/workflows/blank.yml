@@ -45,5 +45,5 @@ jobs:
       - run: echo Command succeeded
         if: ${{ steps.cmd.outputs.stdout }}
           
-      - run: echo Command failed
+      - run: echo Command failed ${{ steps.cmd.outputs.stderr }}
         if: ${{ steps.cmd.outputs.stderr }}
