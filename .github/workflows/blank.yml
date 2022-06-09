@@ -52,4 +52,4 @@ jobs:
           
       - name: outputs
         if: always()
-        run: echo Command failed ${{ toJson(steps.*.outputs.stderr) }}
+        run: echo Command failed ${{ toJson(steps.cmd.outputs.stderr) }}
